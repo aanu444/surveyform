@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+div,
+header,
+form {
+  border: 0px solid #000;
+}
+
+@mixin flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container {
+  @include flex;
+  background-image: url("images/workingmeeting.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 200vh;
+
+  .sub-container {
+    background: rgba(255, 199, 199, 0.6);
+    min-height: 200vh;
+    flex-basis: 100%;
+
+    header {
+      flex-basis: 100%;
+
+      #title,
+      #description {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      #title {
+        margin-top: 60px;
+      }
+    }
+
+    form {
+      flex-basis: 100%;
+      .form-container {
+        width: 60%;
+        margin: 0 auto;
+        background-color: rgba(209, 92, 92, 0.6);
+        .form-group {
+          width: 100%;
+          label {
+            font-size: 1.3rem;
+            display: block;
+            margin-left: 80px;
+            margin-top: 30px;
+            font-weight: bolder;
+          }
+
+          input,
+          select {
+            width: 80%;
+            margin-left: 80px;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #d15c5c;
+          }
+
+          input[type="radio"],
+          input[type="checkbox"] {
+            margin-left: 80px;
+            width: 10%;
+          }
+
+          span {
+            font-weight: bolder;
+          }
+
+          textarea {
+            width: 60%;
+            padding: 50px;
+            margin-left: 80px;
+            font-family: "Roboto", sans-serif;
+            font-size: 1.2rem;
+            font-weight: bolder;
+            color: grey;
+          }
+
+          input[type="submit"] {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #d82f2f;
+            border-radius: 5px;
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    .sub-container {
+      form {
+        .form-container {
+          width: 90%;
+          .form-group {
+            label,
+            input,
+            select,
+            textarea,
+            input[type="checkbox"],
+            input[type="radio"] {
+              margin-left: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
